@@ -1,4 +1,5 @@
 const { Router } = require('express');
+const superheroRouter = require('./routers/superheroRouter');
 const router = Router();
-//router.use('/some_things');
+router.use('/superheroes', superheroRouter);
 module.exports = router;
