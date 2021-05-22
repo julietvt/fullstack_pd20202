@@ -1,4 +1,5 @@
 const { Router } = require('express');
+const { superheroController } = require('./../controllers');
 const superheroRouter = Router();
 superheroRouter
   .route('/')
