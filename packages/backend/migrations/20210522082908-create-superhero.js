@@ -6,37 +6,37 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       nickname: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       realName: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       originDescription: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       superpowers: {
-        type: Sequelize.ARRAY
+        type: Sequelize.ARRAY(Sequelize.STRING),
       },
       catchPhrase: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       images: {
-        type: Sequelize.ARRAY
+        type: Sequelize.ARRAY(Sequelize.STRING),
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
-      }
+        type: Sequelize.DATE,
+      },
     });
   },
   down: async (queryInterface, Sequelize) => {
     await queryInterface.dropTable('Superheros');
-  }
+  },
 };
