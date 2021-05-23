@@ -40,7 +40,7 @@ Object.keys(db).forEach((modelName) => {
     db[modelName].associate(db);
   }
 });
-/*
+
 // для синхронизации с моделью
 sequelize
   .sync({ force: true })
@@ -51,7 +51,7 @@ sequelize
     console.log('err: >>', err);
     process.exit(1);
   });
-*/
+
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 

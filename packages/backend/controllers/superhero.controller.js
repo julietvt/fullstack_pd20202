@@ -24,8 +24,12 @@ module.exports.addImage = async (req, res, next) => {
   } = req;
   try {
     const superheroUpdate = await Superhero.findByPk(superheroId);
+    console.log('superheroId:', superheroId);
+    console.log('superheroUpdate:', superheroUpdate);
+    console.log('model', Superhero);
     if (superheroUpdate) {
       superheroUpdate.images.push(file.filename);
+      console.log('superheroUpdate:', superheroUpdate);
       const [updatedRow, [updatedSuperheroes]] = await Superhero.update(
         superheroUpdate.get(),
         {
@@ -33,6 +37,7 @@ module.exports.addImage = async (req, res, next) => {
           returning: true,
         }
       );
+      console.log('UpdatedRow:', updatedRow);
       return res.status(200).send({ data: updatedSuperheroes });
     }
     res.status(404).send('Not found');
