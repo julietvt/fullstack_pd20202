@@ -17,15 +17,15 @@ module.exports.getMany = async (req, res, next) => {
   //2 http://127.0.0.1:5000/api/superheroes?page=1&someitem=3
   // site express - req query https://expressjs.com/ru/api.html#req.query
   const {
-    query: { page, item_on_page },
+    query: { page, results },
   } = req;
   try {
     const foundHeroes = await Superhero.findAll({
       attributes: {
         exclude: ['id', 'createdAt', 'updatedAt'],
       },
-      limit: item_on_page,
-      offset: item_on_page * (page - 1),
+      limit: results,
+      offset: results * (page - 1),
     });
     res.status(200).send({ data: foundHeroes });
   } catch (err) {
