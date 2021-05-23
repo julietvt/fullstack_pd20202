@@ -2,7 +2,7 @@ POST http://127.0.0.1:5000/api/superheroes
 Content-Type: application/json
 
 {
-    "nickname": "Gekko", 
+    "nickname": "Gekko4", 
     "realName": "Greg",
     "originDescription": "A green-eyed blond boy who knows how to do twine.",
     "superpowers": ["Super muscle", "Super running", "Gecko mobile camouflage"],
