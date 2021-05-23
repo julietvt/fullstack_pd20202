@@ -4,9 +4,12 @@ const { staticPath } = require('./../config/config');
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, path.join(staticPath, '/images'));
+    cb(null, path.join(staticPath + '/images'));
   },
   filename: function (req, file, cb) {
+    //sdf7878fsdfsdfsd8723h2jh34g
+    //11111111_avatar1.jpeg
+    //11111122_avatar1.jpeg
     cb(null, Date.now() + '_' + file.originalname);
   },
 });
